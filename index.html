@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LETHIUM LEGETS | EV DASHBOARD</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div id="splash">
+    <div class="splash-content">
+        <h1 class="splash-logo">LETHIUM LEGETS</h1>
+        <div class="loading-bar"><div class="fill"></div></div>
+        <p>SYNCHRONIZING THERMAL CORE...</p>
+    </div>
+</div>
+
+<div class="dashboard">
+    <header class="header">
+        <div class="header-line"></div>
+        <h2>EV COMMAND DASHBOARD</h2>
+        <div class="header-line"></div>
+    </header>
+
+    <div class="main-content">
+        <div class="panel side-panel">
+            <h3>THRESHOLD</h3>
+            <div class="control-body">
+                <p class="val-text"><span id="thVal">40</span>°C</p>
+                <input type="range" min="20" max="60" value="40" id="threshold" class="range-slider">
+                <small>Safety Limit Adjustment</small>
+            </div>
+        </div>
+
+        <div class="core">
+            <div class="gauge">
+                <div class="inner-circle">
+                    <div id="tempValue">--</div>
+                    <div class="unit">°C</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel side-panel">
+            <h3>SYSTEM STATUS</h3>
+            <div class="status-body">
+                <div id="systemStatus" class="inactive">INACTIVE</div>
+                <div class="fan-container">
+                    <div id="fan" class="fan-icon"></div>
+                </div>
+                <small>Cooling Actuator</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-section">
+        <div class="panel graph-panel">
+            <h3>THERMAL TELEMETRY</h3>
+            <div class="graph">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+
+        <div id="alertCard" class="panel alert safe">
+            <h3>DIAGNOSTICS</h3>
+            <div id="alertText" class="alert-content">System Stable</div>
+            <small id="alertSub">All parameters normal</small>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
